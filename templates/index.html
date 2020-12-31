@@ -1,0 +1,128 @@
+<!-- Student Mark Predictor App GUI -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Heart Disease Prediction</title>
+
+  <style>
+
+    h1   {color: blue;}  /* CSS code for heading h1 */
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show Oxstandhard Univercity Banner-->
+  <div>
+    <img src="static/images/heart.jpg"  alt="Heart Disease" width="90%" height="80px">
+  </div>
+
+ 
+ 
+ <div class="login">
+	
+    <!-- Form Get input to predict Marks-->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>*** Heart Disease Prediction ***</h1>
+        
+    	    	<table>
+    <tr>
+    
+        <td><input align="center" type="number" name="age" placeholder="age in years" required="required" width="48" height="10" /></td>
+    </tr>
+    <tr>
+    
+        <td><input align="center" type="number" name="gender" placeholder="gender" required="required" width="48" height="10" /></td>
+    </tr>
+    <tr>
+        
+        <td><input align="center" type="number" name="cp" placeholder="cp" required="required" width="48" height="10" /></td>
+    </tr>
+    <tr>
+      
+        <td><input align="center" type="number" name="trestbps" placeholder="trestbps" required="required" width="48" height="10" /></td>
+    </tr>
+    <tr>
+       
+        <td><input align="center" type="number" name="chol" placeholder="chol" required="required" width="48" height="10" /></td>
+    </tr>
+    <tr>
+        
+        <td><input align="center" type="number" name="fbs" placeholder="fbs" required="required" width="48" height="10" /></td>
+    </tr>
+    <tr>
+        
+        <td><input align="center" type="number" name="restecg" placeholder="restecg" required="required" width="48" height="10" /></td>
+    </tr>
+    <tr>
+    
+        <td><input align="center" type="number" name="thalach" placeholder="thalach" required="required" width="48" height="10" /></td>
+    </tr>
+    <tr>
+       
+        <td><input align="center" type="number" name="exang" placeholder="exang" required="required" width="48" height="10" /></td>
+    </tr>
+    <tr>
+       
+        <td><input align="center" type="number step=0.01" name="oldpeak" placeholder="oldpeak" required="required" width="48" height="10" /></td>
+    </tr>
+    <tr>
+       
+        <td><input align="center" type="number" name="slope" placeholder="slope" required="required" width="48" height="10" /></td>
+    </tr>
+    <tr>
+       
+        <td><input align="center" type="number" name="ca" placeholder="ca" required="required" width="48" height="10" /></td>
+    </tr>
+    <tr>
+    
+        <td><input align="center" type="number" name="thal" placeholder="thal" required="required" width="48" height="10" /></td>
+    </tr>
+</table>
+
+    	<br>
+        
+        <br>
+        
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" href="http://bit.ly/breast-cancer-ml-project" target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict</strong></button></a>
+        </div>
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h2>{{ prediction_text }}</h2>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
